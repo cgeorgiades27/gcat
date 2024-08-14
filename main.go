@@ -34,9 +34,9 @@ func main() {
 	}
 
 	lineNum := 1
+	writer := bufio.NewWriter(os.Stdout)
 	for _, file := range files {
 		scanner := bufio.NewScanner(file)
-		writer := bufio.NewWriter(os.Stdout)
 		for scanner.Scan() {
 			line := scanner.Text()
 			if *nums {
